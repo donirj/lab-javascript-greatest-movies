@@ -1,17 +1,25 @@
 // Iteration 1: All directors? - Get the array of all directors.
 // _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors.
+
+const movies = require("./data");
+
 // How could you "clean" a bit this array and make it unified (without duplicates)?
 function getAllDirectors(pelis) {
-  let directores = pelis.map((person) =>
-  {
+  let ListaDeDirectores = pelis.map((person) => {
     return person.director
-  })
-  return directores
+  } )
+  return ListaDeDirectores
 }
-getAllDirectors(movies)
+
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
-function howManyMovies() {}
+function howManyMovies(arr) {
+  const stevenpelis = arr.filter(
+    (movie) =>
+      movie.director === 'Steven Spielberg' && movie.genre.includes('Drama')
+  );
+  return stevenpelis.length;
+}
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
 function scoresAverage() {}
